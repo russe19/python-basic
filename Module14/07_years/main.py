@@ -21,3 +21,5 @@ for year in range(beginning, ending + 1):
             print(year)
         else:
             continue
+
+# TODO решите "в лоб" -- режьте на четыре числа статикой
