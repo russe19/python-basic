@@ -1,4 +1,3 @@
-# TODO здесь писать код
 number = int(input('Введите число: '))
 
 for n in range(2, number + 1):

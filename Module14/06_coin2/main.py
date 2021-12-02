@@ -1,4 +1,3 @@
-# TODO здесь писать код
 print('Введите координаты монетки: ')
 x = float(input('X: '))
 y = float(input('Y: '))
