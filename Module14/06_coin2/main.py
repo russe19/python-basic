@@ -4,6 +4,9 @@ x = float(input('X: '))
 y = float(input('Y: '))
 r = float(input('Введите радиус: '))
 
+# TODO именуем по существу и считаем здесь
+# ... = x ** 2 + y ** 2 
+
 if x ** 2 + y ** 2 > r:
     print('Монетки в области нет')
 else:
