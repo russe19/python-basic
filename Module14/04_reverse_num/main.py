@@ -40,4 +40,4 @@ print('Второе число наоборот: ', new_num_2)
 
 print('Сумма: ', new_num_1 + new_num_2)
 
-
+# Ok
