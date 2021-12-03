@@ -19,3 +19,5 @@ print('Сумма цифр: ', summ(number))
 print('Кол-во цифр в числе: ', amount(number))
 
 print('Разность суммы и кол-ва цифр: ', summ(number) - amount(number))
+
+# Ok
