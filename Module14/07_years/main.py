@@ -13,3 +13,5 @@ for year in range(beginning, ending + 1):
     fourth = year % 10
     if first == second == third or first == second == fourth or first == fourth == third or fourth == second == third:
         print(year)
+
+# Ok
