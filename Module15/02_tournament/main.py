@@ -4,3 +4,4 @@ for index in range(len(names)):
     if index % 2 == 0:
         names_first_day.append(names[index])
 print(names_first_day)
+
