@@ -7,8 +7,11 @@ while True:
     if film == 'end':
         break
     for index in range(len(films)):
-        if film == films[index]:
+        if film == films[index] and film not in favorite_films:
             favorite_films.append(film)
         else:
             continue
 print(favorite_films)
+
+# TODO сейчас допустима ситуация с сохранением дубликатов: ['Мементо', 'Мементо', 'Мементо']
+#  чтобы этого избежать, рекомендую воспользоваться оператором not in
