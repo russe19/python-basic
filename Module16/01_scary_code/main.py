@@ -1,24 +1,18 @@
-a = [1, 5, 3]
-b = [1, 5, 1, 5]
-c = [1, 3, 1, 5, 3, 3]
-for i in b:
-    a.append(i)
-t = 0
-for i in a:
-    if i == 5:
-        t += 1
-print(t)
-d = []
-for i in a:
-    if i != 5:
-        d.append(i)
-for i in c:
-    d.append(i)
-t = 0
-for i in d:
-    if i == 3:
-        t += 1
-print(t)
-print(d)
+basic_list = [1, 5, 3]
+first_list = [1, 5, 1, 5]
+second_list = [1, 3, 1, 5, 3, 3]
 
-# TODO переписать программу
+basic_list.extend(first_list)
+
+number_five = basic_list.count(5)
+for _ in range(number_five):
+    basic_list.remove(5)
+
+basic_list.extend(second_list)
+
+number_three = basic_list.count(3)
+
+print('Кол-во цифр 5 при первом объединении:', number_five)
+print('Кол-во цифр 3 при втором объединении:', number_three)
+print('Итоговый список: ', basic_list)
+
