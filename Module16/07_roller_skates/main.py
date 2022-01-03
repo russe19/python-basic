@@ -1,39 +1,26 @@
-def increase(num, lst):
-    for i in range(num):
-        for j in range(i,num):
-            if lst[i] >= lst[j]:
-                lst[i], lst[j] = lst[j], lst[i]
-
 skates_list = []
 people_list = []
 
 skates = int(input('Кол-во коньков: '))
-for i in range(skates):
-    print('Размер', i + 1, 'пары: ', end='')
+for index_skate in range(skates):
+    print('Размер', index_skate + 1, 'пары: ', end='')
     skate = int(input())
     skates_list.append(skate)
 
 people = int(input('\nКол-во людей: '))
-for i in range(people):
-    print('Размер ноги', i + 1, 'человека: ', end='')
+for index_people in range(people):
+    print('Размер ноги', index_people + 1, 'человека: ', end='')
     person = int(input())
     people_list.append(person)
 
-increase(skates, skates_list)
-increase(people, people_list)
+summ = 0
+while skates_list != []:
+    if min(people_list) <= min(skates_list):
+        summ += 1
+        people_list.remove(min(people_list))
+        skates_list.remove(min(skates_list))
+    else:
+        skates_list.remove(min(skates_list))
+print('\nНаибольшее кол-во людей, которые могут взять ролики: ', summ)
 
-s = 0
-for i in range(skates):
-        if skates_list[i] >= min(people_list):
-            s += 1
-            people_list.remove(min(people_list))
-print('Наибольшее кол-во людей, которые могут взять ролики: ', s)
-
-# TODO в таком случае произошла ошибка:
-# Кол-во коньков: 2
-# Размер 1 пары: 12
-# Размер 2 пары: 21
-#
-# Кол-во людей: 1
-# Размер ноги 1 человека: 12
-# TODO хотя правильный ответ должен был отобразиться: 1
+# зачёт!
