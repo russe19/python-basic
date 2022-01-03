@@ -22,3 +22,5 @@ while skates_list != []:
     else:
         skates_list.remove(min(skates_list))
 print('\nНаибольшее кол-во людей, которые могут взять ролики: ', summ)
+
+# зачёт!
