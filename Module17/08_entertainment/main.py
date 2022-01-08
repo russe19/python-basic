@@ -18,3 +18,5 @@ for i in range(throw):
 for i in sticks_list:
     sticks_str += i
 print('Результат: ', sticks_str)
+
+# зачёт!

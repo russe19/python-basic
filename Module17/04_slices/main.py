@@ -10,3 +10,5 @@ print(alphabet[3:4:])
 print(alphabet[-3::])
 print(alphabet[3:5:])
 print(alphabet[4:2:-1])
+
+# зачёт!

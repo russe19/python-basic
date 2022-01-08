@@ -3,3 +3,5 @@ nice_list = [[[1, 2, 3], [4, 5, 6], [7, 8, 9]],
 
 new_list = [number for external_list in nice_list for internal_list in external_list for number in internal_list]
 print(new_list)
+
+# зачёт!
