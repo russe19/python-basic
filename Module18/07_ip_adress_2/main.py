@@ -6,7 +6,7 @@ while True:
     if len(address_list) != 4:
         flag = False
         print('Адрес — это четыре числа, разделённые точками.')
-    if flag == False:
+    if flag == False:  # TODO здесь и далее вместо == должен использоваться оператор is
         break
     for i in range(len(address_list)):
         if address_list[i].isdigit() == False:

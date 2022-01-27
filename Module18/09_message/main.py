@@ -32,3 +32,4 @@ for sym in new_list:
 new_str = ''.join(new)
 print('\nНовое сообщение: ', new_str)
 
+# TODO оформить код по правилам PEP8
