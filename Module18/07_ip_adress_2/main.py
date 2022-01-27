@@ -9,7 +9,7 @@ while True:
     if flag is False:
         break
     for i in range(len(address_list)):
-        if address_list[i].isdigit() == False:
+        if address_list[i].isdigit() is False:
             flag = False
             print(address_list[i], ' — это не целое число.')
             break
