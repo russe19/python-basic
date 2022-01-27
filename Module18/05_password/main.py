@@ -5,6 +5,7 @@ def capital_letters(pass_list):
             s = True
     return s
 
+
 def lower_case(pass_list):
     s = False
     for i in pass_list:
@@ -12,12 +13,14 @@ def lower_case(pass_list):
             s = True
     return s
 
+
 def numbers(pass_list):
     s = False
     for i in pass_list:
         if i.isdigit():
             s = True
     return s
+
 
 while True:
     password = input('Придумайте пароль: ')
@@ -27,5 +30,3 @@ while True:
         break
     else:
         print('Пароль ненадёжный. Попробуйте ещё раз.')
-
-# TODO оформить код по правилам PEP8 (для этого существует сочетание клавиш, доступное в PyCharm)

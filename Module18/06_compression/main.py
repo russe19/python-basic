@@ -1,4 +1,3 @@
-# text = input('Введите строку: ')
 text = 'aaAAbbсaaaA'
 print('Введите строку: ', text)
 s = [i for i in text]

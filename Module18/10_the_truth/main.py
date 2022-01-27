@@ -10,7 +10,27 @@ for i in range(len(text)):
         m = 0
     else:
         s += text[i]
-print(s)
+
+s_list = s.split()
+shift = 3
+new_list = []
+for word in s_list:
+    if '/' in word:
+        shift += 1
+    for i in range(shift):
+        word = word[-1::] + word[:-1:]
+    new_list.append(word)
+new_text = ' '.join(new_list)
+new = ''
+for i in new_text:
+    if i == '(':
+        i = "'"
+    elif i == '+':
+        i = '"'
+    elif i == '/':
+        i = ''
+    new += i
+print(new)
 
 # TODO
 #  Каждое слово зашифровано отдельно шифром Цезаря.

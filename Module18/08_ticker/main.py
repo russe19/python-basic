@@ -1,6 +1,7 @@
 def shift(str):
-    s = [str[(i+1) % len(str)] for i in range(len(str))]
+    s = [str[(i + 1) % len(str)] for i in range(len(str))]
     return s
+
 
 first_str = input('Первая строка: ')
 second_str = input('Вторая строка: ')
@@ -18,7 +19,5 @@ else:
         if new_second == first_str:
             flag = False
             print('\nПервая строка получается из второй со сдвигом', i, '.')
-    if flag == True:  # TODO здесь достаточно заменить выражение на if flag:
+    if flag:
         print('\nПервую строку нельзя получить из второй с помощью циклического сдвига.')
-
-# TODO оформить код по правилам PEP8
