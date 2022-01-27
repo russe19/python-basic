@@ -11,5 +11,9 @@ for i in range(len(text_list)):
         else:
             new_word += word[index]
     new_list.append(new_word)
-new_text = (' ').join(new_list)
+new_text = (' ').join(new_list)  # NOTE доп. круглые скобки здесь не нужны были
 print('\n\nРезультат:', new_text)
+
+# Кстати, эту задачу можно решить и таким способом:
+text = input("Введите строку: ").title()
+print("Результат:", text)
