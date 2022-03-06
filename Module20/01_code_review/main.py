@@ -19,12 +19,14 @@ students = {
     }
 }
 
+
 def interes(dict):
     intereses = []
     for index in dict.values():
         intereses.extend(index['interests'])
     intereses = set(intereses)
     return intereses
+
 
 def number_symbol(dict):
     symbols_second_name = ''
@@ -33,11 +35,13 @@ def number_symbol(dict):
         symbols_second_name += index['surname']
     return len(symbols_second_name)
 
+
 def ID_age(dict):
     pairs = []
     for i in dict:
         pairs.append((i, dict[i]['age']))
     return pairs
+
 
 ID = ID_age(students)
 intereses = interes(students)

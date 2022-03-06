@@ -11,7 +11,7 @@ for order in range(number):
     if data[1] in players:
         if int(data[0]) > players[data[1]]:
             players.pop(data[1])
-            players[data[1]]=int(data[0])
+            players[data[1]] = int(data[0])
     else:
         players[data[1]] = int(data[0])
 
@@ -30,6 +30,6 @@ place = 0
 
 for new_player_name in revers:
     place += 1
-    print(place, ' место. ', new_player_name, ' (', revers[new_player_name], ')', sep='',)
+    print(place, ' место. ', new_player_name, ' (', revers[new_player_name], ')', sep='', )
     if place == 3:
         break
