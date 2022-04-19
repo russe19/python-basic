@@ -32,7 +32,7 @@ def find_key_n(my_key, struct):
         return struct[my_key]
     for sub_struct in struct.values():
         if isinstance(sub_struct, dict):
-            result = find_key(my_key, sub_struct)
+            result = find_key_n(my_key, sub_struct)
             if result:
                 break
     else:
@@ -46,15 +46,9 @@ if depth_selection == 'y':
     depth = int(input('Введите максимальную глубину: '))
     my_depth = 0
     value = find_key_y(my_key, depth, site, my_depth)
-    if value:
-        print(value)
-    else:
-        print('Такого ключа в структуре сайта нет.')
+    print('Значение ключа:', value)
 elif depth_selection == 'n':
     value = find_key_n(my_key, site)
-    if value:
-        print(value)
-    else:
-        print('Такого ключа в структуре сайта нет.')
+    print('Значение ключа:', value)
 else:
     print('Неверный ввод')
