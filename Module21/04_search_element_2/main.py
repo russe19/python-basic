@@ -33,6 +33,7 @@ def find_key_n(my_key, struct):
     for sub_struct in struct.values():
         if isinstance(sub_struct, dict):
             result = find_key(my_key, sub_struct)
+            # TODO выдаёт ошибку NameError: name 'find_key' is not defined
             if result:
                 break
     else:
