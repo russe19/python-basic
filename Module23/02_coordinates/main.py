@@ -8,7 +8,7 @@ def f(x, y):
         if y == 0:
             raise ZeroDivisionError
     except ZeroDivisionError:
-        print('Деление на ноль в первой функции')
+        return print('Деление на ноль в первой функции')
     return x / y
 
 
@@ -19,7 +19,7 @@ def f2(x, y):
         if x == 0:
             raise ZeroDivisionError
     except ZeroDivisionError:
-        print('Деление на ноль во второй функции')
+        return print('Деление на ноль во второй функции')
     return y / x
 
 
@@ -28,21 +28,15 @@ try:
     file_2 = open('result.txt', 'w')
     for line in file:
         nums_list = line.split()
+        res1 = f(int(nums_list[0]), int(nums_list[1]))
+        res2 = f2(int(nums_list[0]), int(nums_list[1]))
         try:
-            res1 = f(int(nums_list[0]), int(nums_list[1]))
-            try:
-                res2 = f2(int(nums_list[0]), int(nums_list[1]))
-                try:
-                    number = random.randint(0, 100)
-                    my_list = sorted([res1, res2, number])
-                    print(str(my_list))
-                    file_2.write(' '.join(str(my_list)) + '\n')
-                except Exception:
-                    print("Что-то пошло не так при сортировке")
-            except Exception:
-                print("Что-то пошло не так со второй функцией")
+            number = random.randint(0, 100)
+            my_list = sorted([res1, res2, number])
+            print(str(my_list))
+            file_2.write(' '.join(str(my_list)) + '\n')
         except Exception:
-            print("Что-то пошло не так с первой функцией")
+            print("Что-то пошло не так при сортировке")
 except Exception:
     print("Что-то пошло не так")
 finally:
