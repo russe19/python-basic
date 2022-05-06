@@ -11,13 +11,8 @@ def couting(i_elem):
     elif i_elements[1] == '*':
         count = (int(i_elements[0]) * int(i_elements[2]))
     elif i_elements[1] == '/':
-        count = (int(i_elements[0]) / int(i_elements[2]))
-    elif i_elements[1] == '//':
-        count = (int(i_elements[0]) // int(i_elements[2]))
-    elif i_elements[1] == '%':
-        count = (int(i_elements[0]) % int(i_elements[2]))
-    elif i_elements[1] == '**':
-        count = (int(i_elements[0]) ** int(i_elements[2]))
+        count = (int(i_elements[0]) / int(i_elements[2]))  # TODO нужно предусмотреть возможность ошибки деления на 0
+        # TODO ZeroDivisionError: division by zero
     else:
         count = None
     return count, i_elem

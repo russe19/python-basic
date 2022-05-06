@@ -34,5 +34,7 @@ try:
         val_exception(i_elem)
 finally:
     file.close()
-    file_1.close()
     file_2.close()
+# TODO по условию задания требуется записывать ошибки в файл с другим названием:
+#  `registrations_bad.log` — для ошибочных, записывать строку и вид ошибки.
+#  в registrations_good.txt нужно записывать корректные строки
