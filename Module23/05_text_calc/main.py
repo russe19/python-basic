@@ -4,6 +4,7 @@ def couting(i_elem):
     i_elements = i_elem.split(' ')
     if len(i_elements) != 3:
         count = None
+        return count, i_elem
     if i_elements[1] == '+':
         count = int(i_elements[0]) + int(i_elements[2])
     elif i_elements[1] == '-':
@@ -11,8 +12,25 @@ def couting(i_elem):
     elif i_elements[1] == '*':
         count = (int(i_elements[0]) * int(i_elements[2]))
     elif i_elements[1] == '/':
-        count = (int(i_elements[0]) / int(i_elements[2]))  # TODO нужно предусмотреть возможность ошибки деления на 0
-        # TODO ZeroDivisionError: division by zero
+        try:
+            count = (int(i_elements[0]) / int(i_elements[2]))
+        except:
+            print('На ноль делить нельзя!')
+            count = None
+    elif i_elements[1] == '//':
+        try:
+            count = (int(i_elements[0]) // int(i_elements[2]))
+        except ZeroDivisionError:
+            print('На ноль делить нельзя!')
+            count = None
+    elif i_elements[1] == '%':
+        try:
+            count = (int(i_elements[0]) % int(i_elements[2]))
+        except:
+            print('На ноль делить нельзя!')
+            count = None
+    elif i_elements[1] == '**':
+        count = (int(i_elements[0]) ** int(i_elements[2]))
     else:
         count = None
     return count, i_elem

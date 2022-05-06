@@ -11,15 +11,13 @@ def val_exception(i_elem):
             raise ValueError
     except IndexError:
         file_2.write(str(new) + '  НЕ присутствуют все три поля' + '\n')
-        file_1.write(str(new) + '\n')
     except NameError:
         file_2.write(str(new) + '  Поле имени содержит НЕ только буквы' + '\n')
-        file_1.write(str(new) + '\n')
     except SyntaxError:
         file_2.write(str(new) + '  Поле «Имейл» НЕ содержит @ и . (точку)' + '\n')
-        file_1.write(str(new) + '\n')
     except ValueError:
         file_2.write(str(new) + '  Поле «Возраст» НЕ является числом от 10 до 99' + '\n')
+    else:
         file_1.write(str(new) + '\n')
 
 
@@ -35,6 +33,3 @@ try:
 finally:
     file.close()
     file_2.close()
-# TODO по условию задания требуется записывать ошибки в файл с другим названием:
-#  `registrations_bad.log` — для ошибочных, записывать строку и вид ошибки.
-#  в registrations_good.txt нужно записывать корректные строки
