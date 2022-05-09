@@ -1,7 +1,7 @@
 import math
 
 
-class Round():
+class Round:
 
     def __init__(self, x=0, y=0, r=1):
         self.x = x

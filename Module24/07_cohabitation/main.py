@@ -62,5 +62,5 @@ while True:
         print('Сытость: {}-{}, {}-{}, деньги: {}, еда:{}'.format(
             person_1.name, person_1.satiety, person_2.name, person_2.satiety, my_house.money, my_house.food))
     else:
-        print('Вы програли!\nВы прожили {} дней'.format(count_days))
+        print('Вы проиграли!\nВы прожили {} дней'.format(count_days))
         break

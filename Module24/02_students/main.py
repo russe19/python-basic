@@ -2,7 +2,7 @@ import random
 import string
 
 
-class Student():
+class Student:
 
     def __init__(self, index, FI='', group=0, performance=[]):
         self.FI = FI
@@ -23,7 +23,7 @@ class Student():
         print('Средний балл {}: '.format(self.FI), self.gpa)
 
 
-class Students():
+class Students:
 
     def __init__(self):
         self.students = [Student(index) for index in range(1, 11)]

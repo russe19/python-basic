@@ -1,7 +1,7 @@
 import random
 
 
-class Warrior():
+class Warrior:
 
     def __init__(self, index):
         self.health = 100
@@ -11,7 +11,7 @@ class Warrior():
         self.health -= 20
 
 
-class Battle():
+class Battle:
 
     def __init__(self, first, second):
         self.first = first

@@ -8,10 +8,8 @@ class Water:
             return Storm()
         elif isinstance(other, Fire):
             return Steam()
-        elif isinstance(other, Eatrh):
+        elif isinstance(other, Earth):
             return Dirt()
-        else:
-            return None
 
 
 class Air:
@@ -26,8 +24,6 @@ class Air:
             return Lightning()
         elif isinstance(other, Earth):
             return Dust()
-        else:
-            return None
 
 
 class Fire:
@@ -42,8 +38,6 @@ class Fire:
             return Lightning()
         elif isinstance(other, Earth):
             return Lava()
-        else:
-            return None
 
 
 class Earth:
@@ -58,8 +52,6 @@ class Earth:
             return Dust()
         elif isinstance(other, Fire):
             return Lava()
-        else:
-            return None
 
 
 class Storm:

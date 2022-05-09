@@ -16,7 +16,7 @@ class Parent:
 
     def feed_children(self):
         for my_child in self.children:
-            if my_child.hungry == True:
+            if my_child.hungry:
                 print('\nРебенок {} сыт'.format(my_child.name))
             else:
                 print('\nРебенок {} голоден'.format(my_child.name))
@@ -32,7 +32,7 @@ class Parent:
 
     def calm_down_children(self):
         for my_child in self.children:
-            if my_child.calm == True:
+            if my_child.calm:
                 print('\nРебенок {} спокоен'.format(my_child.name))
             else:
                 print('\nРебенок {} не спокоен'.format(my_child.name))

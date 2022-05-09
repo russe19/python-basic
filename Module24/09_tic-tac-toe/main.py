@@ -59,14 +59,14 @@ while True:
     print('Ходит первый игрок!')
     player_1.player_turn()
     win_1 = player_1.filling()
-    if win_1 == True:
+    if win_1:
         print('Победил первый игрок!')
         break
     player_1.board.info()
     print('Ходит второй игрок!')
     player_2.player_turn()
     win_2 = player_2.filling()
-    if win_2 == True:
+    if win_2:
         print('Победил второй игрок!')
         break
     player_1.board.info()

@@ -25,15 +25,12 @@ class PotatoGarden:
         self.potatoes = [Potato(index) for index in range(1, count + 1)]
 
     def grow_all(self):
-        print('Картошка проростает')
+        print('Картошка прорастает')
         for i_potato in self.potatoes:
             i_potato.grow()
 
     def are_all_ripe(self):
-        if all([i_potato.it_ripe() for i_potato in self.potatoes]):
-            return True
-        else:
-            return False
+        return all([i_potato.it_ripe() for i_potato in self.potatoes])  # так тоже можно
 
 
 class Gardener:
