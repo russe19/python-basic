@@ -1,5 +1,6 @@
 import math
 
+
 class Car:
 
     def __init__(self, x, y, angle):
@@ -8,7 +9,7 @@ class Car:
         self.angle = 0.0175 * angle
 
     def __str__(self):
-        return 'Координата x: {}\tКоордината y: {}\tУгол: {}'.format(self.x, self.y, self.angle * (1/0.0175))
+        return 'Координата x: {}\tКоордината y: {}\tУгол: {}'.format(self.x, self.y, self.angle * (1 / 0.0175))
 
     def move(self, distance):
         self.x += distance * math.cos(self.angle)
@@ -28,7 +29,7 @@ class Bus(Car):
 
     def __str__(self):
         return 'Координата x:{}\tКоордината y:{}\tУгол:{}\tКол-во пассажиров:{}\tДеньги:{}'.format(
-            self.x, self.y, self.angle * (1/0.0175), self.passengers, self.money)
+            self.x, self.y, self.angle * (1 / 0.0175), self.passengers, self.money)
 
     def come_in(self):
         self.passengers += 1
@@ -64,4 +65,3 @@ for _ in range(7):
 bus.turn(160)
 bus.move(30)
 print(bus)
-

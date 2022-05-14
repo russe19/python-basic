@@ -17,17 +17,11 @@ class Person:
 
 class Employee(Person):
 
-    def __init__(self, name, surname, age):
-        super().__init__(name, surname, age)
-
     def salary(self):
         pass
 
 
 class Manager(Employee):
-
-    def __init__(self, name, surname, age):
-        super().__init__(name, surname, age)
 
     def salary_calculation(self):
         salary = 13000

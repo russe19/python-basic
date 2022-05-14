@@ -6,7 +6,6 @@ class Dict(dict):
         return 0
 
 
-
 my_dict = Dict()
 my_dict['Один'] = 1
 my_dict['Два'] = 2
