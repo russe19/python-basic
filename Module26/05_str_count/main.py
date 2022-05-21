@@ -1,10 +1,10 @@
 import os
 
 tree = os.walk(os.path.abspath(os.path.join('..')))
-print(tree)
 
-summ = 0
+all_summ = 0
 for dirpath, dirnames, filenames in tree:
+    summ = 0
     s = os.path.split(dirpath)
     for i_elem in filenames:
         if i_elem.endswith('.py'):
@@ -15,6 +15,8 @@ for dirpath, dirnames, filenames in tree:
                     quotes += i_line.count('"""')
                     if not all(i_sym == ' ' or i_sym == '\n' or i_sym == '' for i_sym in i_line) and \
                             i_line[0] != '#' and quotes % 2 == 0:
+                        all_summ += 1
                         summ += 1
             print(i_path)
-print('Колличество строк в дериктории: ', summ)
+            print('Количество cтрок в файле: {}\n'.format(summ))
+print('Колличество строк в дериктории: ', all_summ)

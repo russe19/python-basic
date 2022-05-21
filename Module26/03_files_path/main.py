@@ -2,16 +2,23 @@ import os
 import types
 
 tree = os.walk(os.path.abspath(os.path.join('..', '..')))
-print(tree)
+file = 'karma.log'
 
-path = os.path.abspath(os.path.join('..', '..', '..', '..', 'pythonProject1'))
-file = 'linkedlist.PNG'
 
-for dirpath, dirnames, filenames in tree:
-    s = os.path.split(dirpath)
-    print(dirpath)
-    for i_elem in filenames:
-        print(os.path.abspath(os.path.join(dirpath, i_elem)))
-        if i_elem == file:
-            print('Файл найден!\nПуть к файлу: ', os.path.abspath(os.path.join(dirpath, file)))
-            break
+def path_gen(tree, file):
+    for dirpath, dirnames, filenames in tree:
+        s = os.path.split(dirpath)
+        print(dirpath)
+        for i_elem in filenames:
+            if i_elem == file:
+                s = 1
+                yield os.path.abspath(os.path.join(dirpath, i_elem)), False
+            yield os.path.abspath(os.path.join(dirpath, i_elem)), True
+
+
+for i_elem, i_bool in path_gen(tree, file):
+    if i_bool:
+        print(i_elem)
+    else:
+        print('Файл найден! Путь к файлу:\n', i_elem)
+        break
