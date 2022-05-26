@@ -1,16 +1,17 @@
-import logging
-import os
+import functools
 import datetime
 from typing import Callable
 
 
 def logging(func: Callable) -> Callable:
+    @functools.wraps(func)  # NOTE здесь можно использовать такой синтаксис декораторов
     def inner_function(*args, **kwargs) -> None:
         try:
             func(*args, **kwargs)
         except Exception as err:
             time = datetime.datetime.now()
-            with open('function_errors.log', 'a') as file:
+            with open('function_errors.log', 'a', encoding='utf-8') as file:
+                # NOTE уточнить кодировку при работе с файлом никогда не лишне
                 file.write('{},{} - {}\n'.format(time, func.__name__, err))
 
     return inner_function
@@ -33,6 +34,7 @@ numbers = [2, 3, 'f', 8]
 
 @logging
 def test(num_1: int, num_2: int) -> None:
+    # NOTE можно поправить оформление и содержание документации
     '''
     Деление числа.
     :param num_1:
