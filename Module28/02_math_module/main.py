@@ -1,30 +1,29 @@
-from abc import ABC, abstractmethod
 import math
 
 
-class MyMath(ABC):
+class MyMath:
 
-    @abstractmethod
+    @staticmethod  # так тоже можно
     def circle_len(radius):
         return 2 * radius * math.pi
 
-    @abstractmethod
+    @staticmethod
     def circle_sq(radius):
         return math.pi * radius ** 2
 
-    @abstractmethod
+    @staticmethod
     def cube_vol(a, b, c):
         return a * b * c
 
-    @abstractmethod
+    @staticmethod
     def cube_surface_perimetr(a, b, c):
         return 2 * (a * b + a * c + b * c)
 
-    @abstractmethod
+    @staticmethod
     def surf_area_sphere(radius):
         return 4 * math.pi * radius ** 2
 
-    @abstractmethod
+    @staticmethod
     def ball_vol(radius):
         return (4 / 3) * math.pi * radius ** 3
 
