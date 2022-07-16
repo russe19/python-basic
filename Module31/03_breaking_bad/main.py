@@ -19,7 +19,6 @@ for i in info:
     if info[i] == max(info.values()):
         season, episode = i
         number_of_deaths = info[i]
-print(season, episode)
 
 s = requests.get(f'https://www.breakingbadapi.com/api/episodes')
 d = json.loads(s.text)
