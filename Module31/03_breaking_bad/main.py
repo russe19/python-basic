@@ -7,10 +7,19 @@ data = json.loads(s.text)
 info = dict()
 for i in data:
     if (i['season'], i['episode']) in info:
-        info[(i['season'], i['episode'])] += 1
+        info[(i['season'], i['episode'])] += i['number_of_deaths']
     else:
-        info[(i['season'], i['episode'])] = 1
-season, episode = max(info)
+        info[(i['season'], i['episode'])] = i['number_of_deaths']
+
+season = 0
+episode = 0
+number_of_deaths = 0
+print(info)
+for i in info:
+    if info[i] == max(info.values()):
+        season, episode = i
+        number_of_deaths = info[i]
+print(season, episode)
 
 s = requests.get(f'https://www.breakingbadapi.com/api/episodes')
 d = json.loads(s.text)
@@ -23,15 +32,17 @@ with open('death.json', 'w') as file:
     json.dump(d, file, indent=4)
 
 epis = dict()
-epis[1] = id
-epis[2] = season
-epis[3] = episode
-epis[4] = 0
-epis[5] = list()
+epis['episode_id'] = id
+epis['season'] = season
+epis['episode'] = episode
+epis['number_of_deaths'] = number_of_deaths
+epis['deaths'] = ''
 for i in data:
     if season == i['season'] and episode == i['episode']:
-        epis[4] += 1
-        epis[5].append(i['death'])
+        if epis['deaths'] == '':
+            epis['deaths'] = i['death']
+        else:
+            epis['deaths'] += ', ' + i['death']
 print(epis)
 with open('death.json', 'w') as file:
     json.dump(epis, file, indent=4)
